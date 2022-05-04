@@ -42,7 +42,7 @@
         width: 70%;
         height: 100%;
         display: none;
-        animation: appear 3s;
+        animation: appear 2s;
         justify-content: space-around;
         align-items: center;
         position: relative;
@@ -226,9 +226,9 @@
       }
       #pre-page {
         position: fixed;
-        bottom: 20px;
-        right: 30px;
-        font-size: 18px;
+        bottom: 40px;
+        right: 60px;
+        font-size: 28px;
       }
     </style>
   </head>
@@ -333,9 +333,10 @@
       const localStoragePageKey = "hitonahenotegami_2022_page";
       const localStorageLanguageKey = "hitonahenotegami_2022_lang";
       // 中日文状态
-      let currentIsJp = /^jp.*/i.test(
+      let currentIsJp = /(^jp.*)|(^ja.*)/i.test(
         localStorage.getItem(localStorageLanguageKey) || navigator.language
       );
+      console.log(navigator.language)
       // 工具函数
       const totalPage = dataSet.length + 1;
       function getFixedPageNo(nextPage, isIniting, onEnd) {

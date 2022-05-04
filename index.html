@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=false"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
     />
     <title>ひとなちゃんへの誕生日プレゼント</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <style>
       @font-face {
-        font-family: "新叶念体";
-        src: url("./resources/font/xinyenianti.otf");
+        font-family: "Aa可爱の日系中文2万字";
+        src: url('./resources/font/aa.woff');
         font-weight: normal;
         font-style: normal;
       }
@@ -28,7 +29,7 @@
       body {
         margin: 0;
         padding: 0;
-        font-family: "新叶念体";
+        font-family: "Aa可爱の日系中文2万字";
         font-size: 30px;
         cursor: pointer;
         width: 100vw;
@@ -68,7 +69,7 @@
         z-index: 10;
         background-color: transparent;
         font-size: 24px;
-        font-family: "Courier New", Courier, monospace;
+        /* font-family: "Courier New", Courier, monospace; */
       }
       .toast-content {
         position: absolute;
@@ -415,7 +416,7 @@
       // bgm控制
       const bgm = new Audio("./resources/music/bgm.mp3");
       // 音量50%
-      bgm.volume = 0.02;
+      bgm.volume = 0.22;
       // 循环播放
       bgm.loop = true;
       let isBGMPlaying = false;
@@ -447,7 +448,7 @@
         false
       );
       const dingdong = new Audio(base64edDingdong);
-      dingdong.volume = 0.05;
+      dingdong.volume = 0.25;
       const fanye = new Audio(base64edFanye);
       let isInitToasted = false;
       let isInitToasting = false;
@@ -458,7 +459,7 @@
         page.id = `p${index + 2}`;
         page.className = "send-word-page";
         const nameDOM = document.createElement("div");
-        nameDOM.innerHTML = `${item.from}:`;
+        nameDOM.innerHTML = `${item.from}：`;
         nameDOM.className = "send-word-from";
         const contentMainDOM = document.createElement("div");
         contentMainDOM.innerHTML = currentIsJp ? item.jp : item.cn;
